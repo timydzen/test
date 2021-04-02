@@ -1,0 +1,54 @@
+<header class="header">
+	<nav class="container">
+
+
+		<a href="/" class="header__logo"></a>
+
+
+		<ul class="header__menu" id="activemenu">
+			<li class="header__menu--link ">
+				<a href="/">
+					ГЛАВНАЯ
+				</a>
+			</li>
+			<li class="header__menu--link">
+				<a href="/gallery.html">
+					ГАЛЕРЕЯ
+				</a>
+			</li>
+			<li class="header__menu--link">
+				<a href="/project.html">
+					ПРОЕКТЫ
+				</a>
+			</li>
+			<li class="header__menu--link">
+				<a href="/sert.html">
+					СЕРТИФИКАТЫ
+				</a>
+			</li>
+			<li class="header__menu--link">
+				<a href="/contacts.html">
+					КОНТАКТЫ
+				</a>
+			</li>
+		</ul>
+
+		<div class="header__burger">
+			<div class="header__burger--btn">
+				<button class="btn-burger" id="burgerBtn">
+					<div></div>
+				</button>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<script>
+	let activemenu = document.getElementById('activemenu')
+	let burgerBtn = document.getElementById('burgerBtn')
+	burgerBtn.addEventListener('click', function () {
+		this.classList.toggle('active')
+		activemenu.classList.toggle('open')
+	})
+
+</script>

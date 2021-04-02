@@ -1,0 +1,45 @@
+<div class="modal--overlay" id="modalall">
+	<div class="modal">
+
+		<div class="contain" id="modalform">
+			<div class=" modal__head">
+				Задать вопрос
+				<button class="modal--close modalclose">X</button>
+			</div>
+			<div class="modal__body">
+				<form id="modal__form" action="#" class="modal__body--form">
+					<input type="text" placeholder="Имя" class="modal__form_input">
+					<input type="text" placeholder="Номер телефона" class="modal__form_input">
+					<input type="text" placeholder="E-mail" class="modal__form_input">
+					<input type="text" placeholder="Интересующий товар\услуга" class="modal__form_input">
+					<textarea name="msg" id="" cols="30" rows="10" class="modal__form_msg"
+						placeholder="Сообщение"></textarea>
+					<div class="modal__form_check">
+						<input type="checkbox" class="modal__form_check-box" name="a" id="xxx" hidden>
+						<label for="xxx">Отправляя заявку Вы соглашаетесь
+							с политикой
+							конфиденциальности</label>
+					</div>
+					<button class="btn_see gray" type="submit" id="sendform">Отправить</button>
+				</form>
+			</div>
+		</div>
+
+		<div class="modal_send" id="modalafter">
+			<svg width="142" height="142" viewBox="0 0 142 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path
+					d="M71 112C93.6437 112 112 93.6437 112 71C112 48.3563 93.6437 30 71 30C48.3563 30 30 48.3563 30 71C30 93.6437 48.3563 112 71 112Z"
+					fill="#0DC332" />
+				<path
+					d="M133.5 71C133.5 105.518 105.518 133.5 71 133.5C36.4822 133.5 8.5 105.518 8.5 71C8.5 36.4822 36.4822 8.5 71 8.5C105.518 8.5 133.5 36.4822 133.5 71Z"
+					stroke="#D1D1D1" />
+				<path d="M92 56L66.1538 85L50 72.1111" stroke="white" stroke-width="6" stroke-miterlimit="10"
+					stroke-linecap="round" stroke-linejoin="round" />
+			</svg>
+			<h4>Спасибо!</h4>
+			<p>Ваше сообщение отправлено мы свяжемся с вами в ближайшее время</p>
+			<button class="btn_see gray" type="submit" id="modalGoBack">Вернуться назад</button>
+		</div>
+
+	</div>
+</div>

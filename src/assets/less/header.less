@@ -1,0 +1,147 @@
+.header {
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        // height: 102px;
+        margin: 20px auto;
+    }
+
+    &__logo {
+        height: 44px;
+        width: 70px;
+        display: flex;
+        margin: auto 0;
+        background-image: url(@logoImg);
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        transition: .3s ease-in-out;
+
+        &--link {
+            color: @gray1;
+            text-decoration: none;
+            list-style: none;
+            font-size: 12px;
+            margin: 0 0 0 60px;
+            text-transform: uppercase;
+            transition: .3s;
+            border-top: 1px solid transparent;
+            border-bottom: 1px solid transparent;
+            padding: 2px 0;
+
+            &.active,
+            &:hover {
+                border-top: 1px solid @gray1;
+                border-bottom: 1px solid @gray1;
+            }
+
+            a {
+                text-decoration: none;
+                color: @gray1;
+
+            }
+        }
+
+        @media screen and (max-width: 769px) {
+            right: -100%;
+            left: 100%;
+            position: fixed;
+            z-index: 100;
+            visibility: hidden;
+            flex-direction: column;
+            box-shadow: 0 0 4px @gray1;
+            top: 0;
+
+            .header__menu--link {
+                margin: 10px 0;
+
+                a {
+                    margin: 15px auto;
+                    text-align: center;
+                }
+            }
+
+            &.open {
+                opacity: 1;
+                visibility: visible;
+                background: @gray6;
+
+                right: 0;
+                left: 0;
+
+
+            }
+        }
+    }
+
+
+    &__burger {
+        width: 50px;
+        display: none;
+
+        &--btn {
+            position: relative;
+            height: 50px;
+
+            .btn-burger {
+                cursor: pointer;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                position: absolute;
+                width: 50px;
+                background: unset;
+                border: none;
+                outline: none;
+                transition: .3s ease-in-out;
+
+                &:before,
+                &:after,
+                div {
+                    background: @gray1;
+                    content: "";
+                    display: block;
+                    height: 6px;
+                    border-radius: 3px;
+                    margin: 7px 0;
+                    transition: 0.5s;
+                }
+
+                &:hover {
+                    filter: drop-shadow(0 0 3px rgba(@gray1, 70%));
+                }
+
+                &.active {
+                    &::before {
+                        transform: translateY(12px) rotate(135deg);
+                    }
+
+                    &::after {
+                        transform: translateY(-14px) rotate(-135deg);
+                    }
+
+                    div {
+                        transform: scale(0);
+                    }
+                }
+
+
+            }
+        }
+
+        @media screen and (max-width:769px) {
+            z-index: 110;
+            display: block;
+            position: fixed;
+            top: 20px;
+            right: 15px;
+        }
+
+
+    }
+
+}

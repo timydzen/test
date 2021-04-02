@@ -1,0 +1,105 @@
+.footer {
+    background-color: @grayfoot;
+    color: @white;
+
+    hr {
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &__copy {
+        font-size: 12px;
+        color: rgba(200, 200, 200, 0.5);
+        text-align: center;
+        padding: 24px 0;
+    }
+
+    .container {
+        &:first-child {
+            display: flex;
+            flex-direction: row;
+            padding: 60px 15px;
+
+            @media screen and (max-width:769px) {
+                flex-direction: column;
+            }
+
+        }
+    }
+
+    &__logo {
+        width: 145px;
+        height: 94px;
+        background-image: url(@logoFooter);
+        margin-right: 100px;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+    }
+
+    h5 {
+        font-size: 16px;
+        color: @white;
+        margin-bottom: 25px;
+    }
+
+    &_menu {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+
+
+        .navigation {
+            width: 100%;
+            padding: 0 15px;
+
+            &__social {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                max-width: 190px;
+            }
+        }
+
+        @media screen and (max-width:769px) {
+            // flex-direction: column;
+            flex-wrap: wrap;
+
+            .navigation {
+                width: 50%;
+                margin: 10px 0;
+            }
+        }
+
+        @media screen and (max-width:525px) {
+            .navigation {
+                width: 100%;
+            }
+        }
+    }
+
+    &__list {
+
+
+        li {
+            margin-bottom: 15px;
+
+            a {
+                display: flex;
+                flex-direction: row;
+
+                svg {
+                    min-width: 16px;
+                    width: 16px;
+                    height: 16px;
+                    margin-right: 10px;
+                }
+
+                p {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

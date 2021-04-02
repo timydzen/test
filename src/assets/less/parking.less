@@ -1,0 +1,52 @@
+.parking {
+    h2 {
+        margin-top: 60px;
+    }
+
+    h3 {
+        margin-bottom: 30px;
+    }
+
+    hr {
+        color: @gray6;
+        margin-bottom: 30px;
+    }
+
+    &_bg {
+        max-width: 1170px;
+        width: 100%;
+        height: 435px;
+        background-size: cover;
+
+        &.bg1 {
+            background-image: url(@parkingbg1);
+            margin-bottom: 30px;
+        }
+
+        &.bg2 {
+            background-image: url(@parkingbg2);
+            margin-bottom: 120px;
+        }
+    }
+
+    &_card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 30px;
+
+        &_bg {
+            max-width: 419px;
+            width: 100%;
+            height: 428px;
+            background-size: cover;
+            background-image: url(@parkingcardbg);
+        }
+
+        p {
+            max-width: 721px;
+            width: 100%;
+            line-height: 25px;
+        }
+    }
+}

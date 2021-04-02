@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	@@include('include/_style.html')
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+
+</head>
+
+<body>
+	@@include('include/_header.html')
+
+	@@include('include/_galery.html')
+
+	@@include('include/_footer.html')
+</body>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+	const swiper = new Swiper('.swiper-container', {
+		// Optional parameters
+		// direction: 'vertical',
+		// loop: true,
+		autoHeight: true,
+		spaceBetween: 100,
+		// Navigation arrows
+		navigation: {
+			nextEl: '#slider-gallery-next',
+			prevEl: '#slider-gallery-prev',
+		},
+
+	});
+
+</script>
+
+</html>

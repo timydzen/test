@@ -1,0 +1,65 @@
+.contact {
+    position: relative;
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+
+    .map {
+        // width: 100%;
+        height: 500px;
+
+        @media screen and (min-width: 1001px) {
+            top: 0;
+            left: 50%;
+            right: 0;
+            position: absolute;
+
+        }
+    }
+
+
+    &_info {
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+            margin-bottom: 34px;
+        }
+
+        a {
+            margin-bottom: 30px;
+        }
+
+        a span {
+            font-family: @FFRBold;
+        }
+
+        &_tel {
+            font-family: @FFRBold;
+        }
+
+        .btn_see {
+            margin-bottom: 112px;
+        }
+
+    }
+
+    @media screen and (max-width:1000px) {
+        display: flex;
+        flex-direction: column;
+
+        &_info {
+            .btn_see {
+                margin-bottom: 25px;
+            }
+        }
+
+        .map {
+            height: 300px;
+        }
+    }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Создание и удаление</title>
+
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=5b44b91d-117a-477a-a8c7-2f9cb615ebe9"
+		type=" text/javascript"> </script>
+
+	@@include('include/_style.html')
+</head>
+
+<body>
+	@@include('include/_header.html')
+
+	@@include('include/_contact.html')
+
+	@@include('include/_footer.html')
+
+	@@include('include/_modal.html')
+</body>
+<script>
+	var myMap;
+
+	// Дождёмся загрузки API и готовности DOM.
+	ymaps.ready(init);
+
+	function init() {
+		// Создание экземпляра карты и его привязка к контейнеру с
+		// заданным id ("map").
+		myMap = new ymaps.Map('map', {
+			// При инициализации карты обязательно нужно указать
+			// её центр и коэффициент масштабирования.
+			center: [49.807754, 73.088504], // Москва
+			zoom: 10
+		}, {
+			searchControlProvider: 'yandex#search'
+		});
+	}
+
+</script>
+<script>
+	let concon = document.getElementById('concon')
+	let modalform = document.getElementById('modalform')
+	let modalafter = document.getElementById('modalafter')
+	let modalall = document.getElementById('modalall')
+	let sendform = document.getElementById('sendform')
+	let modalclose = document.querySelectorAll('.modalclose')
+
+
+	concon.addEventListener('click', function () {
+		modalall.classList.add('opened');
+	})
+	modalclose.forEach(el => {
+		el.addEventListener('click', function () {
+			modalall.classList.remove('opened');
+			modalform.classList.remove('closed');
+			modalafter.classList.remove('opened');
+		})
+	});
+
+	sendform.addEventListener('click', function () {
+		modalform.classList.add('closed');
+		modalafter.classList.add('opened');
+	})
+
+	document.getElementById('modalGoBack').addEventListener('click', function () {
+		modalform.classList.remove('closed');
+		modalafter.classList.remove('opened');
+		modalall.classList.remove('opened');
+	})
+
+</script>
+
+</html>

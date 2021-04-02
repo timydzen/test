@@ -1,0 +1,209 @@
+.modal {
+    max-width: 469px;
+    width: 100%;
+    background: @white;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid @black;
+
+    .contain {
+        max-width: 391px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 10px;
+
+        &.closed {
+            display: none;
+        }
+
+    }
+
+    &--overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        justify-content: center;
+        align-items: center;
+        display: none;
+
+        &.opened {
+            display: flex;
+        }
+    }
+
+    &__head {
+        display: flex;
+        flex-direction: row;
+        font-size: 21px;
+        color: @black;
+        font-weight: bold;
+        margin: 26px 0 25px;
+        justify-content: center;
+
+    }
+
+    &--close {
+        padding: 10px;
+        font-size: 15px;
+        background: @white;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 15px;
+    }
+
+    &__body {
+
+        &--form {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__form {
+
+
+        &_input {
+            max-width: 391px;
+            width: 100%;
+            height: 46px;
+            font-size: 14px;
+            padding: 0 0 0 21px;
+            background: @grayformbg;
+            border: none;
+            margin-bottom: 10px;
+        }
+
+        &_check {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 25px;
+
+            &-box:checked {
+                +label::before {
+                    opacity: 1;
+                }
+            }
+
+
+            label {
+                font-size: 14px;
+                max-width: 300px;
+                width: 100%;
+                display: inline-flex;
+                align-items: center;
+                user-select: none;
+                position: relative;
+                padding-left: 30px;
+                cursor: pointer;
+
+                &::after {
+                    content: '';
+                    display: inline-block;
+                    width: 23px;
+                    height: 23px;
+                    position: absolute;
+                    background: @grayformbg;
+                    top: 0;
+                    left: 0;
+                    z-index: 1;
+                    border-radius: 4px;
+                    border: 1px solid transparent;
+                    transition: .3s;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 24px;
+                    height: 24px;
+                    top: 0;
+                    left: 0;
+                    background-image: url(@galo4ka);
+                    z-index: 2;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    opacity: 0;
+                    transition: .3s;
+                }
+
+                &:hover,
+                &:focus {
+                    &::after {
+                        border: 1px solid @gray1;
+                    }
+                }
+            }
+
+        }
+
+        &_msg {
+            max-width: 391px;
+            width: 100%;
+            height: 147px;
+            font-size: 14px;
+            background: @grayformbg;
+            resize: none;
+            border: none;
+            margin-bottom: 10px;
+            padding: 15px 0 0 21px;
+        }
+    }
+
+    .btn_see {
+        max-width: 391px;
+        width: 100%;
+        height: 42px;
+        margin-bottom: 30px;
+    }
+
+    &_send {
+        max-width: 516px;
+        padding: 10px;
+        width: 100%;
+        height: 421px;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid @black;
+
+        &.opened {
+            display: flex;
+        }
+
+        svg {
+            max-width: 142px;
+            width: 100%;
+            max-height: 142px;
+            height: 100%;
+            margin: 44px auto 24px;
+        }
+
+        h4 {
+            font-size: 24px;
+            color: @gray1;
+            line-height: 26px;
+            margin-bottom: 27px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #4f4f4f;
+            margin-bottom: 41px;
+        }
+
+        button {
+            text-transform: uppercase;
+            max-width: 392px;
+            width: 100%;
+            height: 42px;
+            margin-bottom: 23px;
+        }
+    }
+}
